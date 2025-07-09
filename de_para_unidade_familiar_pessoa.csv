@@ -1,0 +1,81 @@
+Collection: unidade_familiar_pessoa,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5
+Campo (Mongo),Tipo de campo (Mongo),Tabela (Postgres),Campo (Postgres),Tipo de campo (Postgres),Funcão geradora (Postgres)
+_id,ObjectId,Não se aplica,Não se aplica,Não se aplica,Não se aplica
+idUnidadeFamiliar,string,S_UNIDADE_FAMILIAR,id_unidade_familiar,uuid,Não se aplica
+codigoSipra ,string,S_UNIDADE_FAMILIAR_PESSOA,cd_sipra,varchar,Não se aplica
+excluido ,boolean,S_UNIDADE_FAMILIAR_PESSOA,st_excluido,boolean,Não se aplica
+trabalhaUfpr ,boolean,S_UNIDADE_FAMILIAR_PESSOA,st_trabalha_ufpr,boolean,Não se aplica
+codigoCaf ,string,S_UNIDADE_FAMILIAR_PESSOA,cd_caf,varchar,Não se aplica
+dataCriacao,date,S_UNIDADE_FAMILIAR_PESSOA,dt_criacao,timestamp,Não se aplica
+dataAtualizacao,date,S_UNIDADE_FAMILIAR_PESSOA,dt_atualizacao,timestamp,Não se aplica
+dataInicioMaoDeObra ,string,S_UNIDADE_FAMILIAR_PESSOA,dt_inicio_mao_de_obra,date,Não se aplica
+dataFimMaoDeObra ,string,S_UNIDADE_FAMILIAR_PESSOA,dt_fim_mao_de_obra,date,Não se aplica
+cadastroCadunico ,boolean,S_UNIDADE_FAMILIAR_PESSOA,st_cadastro_cadunico,boolean,Não se aplica
+baixaRenda ,boolean,S_UNIDADE_FAMILIAR_PESSOA,st_baixa_renda,boolean,Não se aplica
+cadunicoAtualizado ,boolean,S_UNIDADE_FAMILIAR_PESSOA,st_cadunico_atualizado,boolean,Não se aplica
+idMembroFamiliar ,string,S_UNIDADE_FAMILIAR_PESSOA,id_unidade_familiar_pessoa,uuid,Não se aplica
+beneficioCreditoFundiario,,,,,Não se aplica
+assentadoReforma ,,,,,Não se aplica
+,,,,,
+,,,,,
+pessoaFisica,Object,S_PESSOA_FISICA,Não se aplica,Não se aplica,Não se aplica
+pessoaFisica.id,string,S_PESSOA_FISICA,id_pessoa_fisica,uuid,Não se aplica
+pessoaFisica.uf,string,S_PESSOA_FISICA,sg_uf,varchar,Não se aplica
+pessoaFisica.nome,string,S_PESSOA_FISICA,nm_pessoa_fisica,varchar,Não se aplica
+pessoaFisica.nomeSocial,string,S_PESSOA_FISICA,nm_social,varchar,Não se aplica
+pessoaFisica.dataNascimento,string,S_PESSOA_FISICA,dt_nascimento,date,Não se aplica
+pessoaFisica.cpf,string,S_PESSOA_FISICA,nr_cpf,varchar,Não se aplica
+pessoaFisica.nomeMae,string,S_PESSOA_FISICA,nm_mae,varchar,Não se aplica
+pessoaFisica.nomePai,string,S_PESSOA_FISICA,nm_pai,varchar,Não se aplica
+pessoaFisica.email,string,S_PESSOA_FISICA,ds_email,varchar,Não se aplica
+pessoaFisica.emancipado,boolean,S_PESSOA_FISICA,st_declarante_emancipado,boolean,Não se aplica
+pessoaFisica.dataCriacao,date,S_PESSOA_FISICA,dt_criacao,timestamp,Não se aplica
+pessoaFisica.dataAtualizacao,date,S_PESSOA_FISICA,dt_atualizacao,timestamp,Não se aplica
+pessoaFisica.excluido,boolean,S_PESSOA_FISICA,st_excluido,boolean,Não se aplica
+,,,,,
+pessoaFisica.telefones,Array,S_TELEFONE_PESSOA,Não se aplica,Não se aplica,Não se aplica
+pessoaFisica.telefones[].id,string,S_TELEFONE_PESSOA,id_telefone_pessoa,uuid,Não se aplica
+,,,,,
+pessoaFisica.telefones[].telefone,Object,S_TELEFONE,Não se aplica,Não se aplica,Não se aplica
+pessoaFisica.telefones[].telefone.id,string,S_TELEFONE,id_telefone,uuid,Não se aplica
+pessoaFisica.telefones[].telefone.numero,string,S_TELEFONE,nr_telefone,varchar,Não se aplica
+pessoaFisica.telefones[].telefone.ativo,boolean,S_TELEFONE,st_ativo,boolean,Não se aplica
+pessoaFisica.telefones[].telefone.dataCriacao,date,S_TELEFONE,dt_criacao,timestamp,Não se aplica
+pessoaFisica.telefones[].telefone.dataAtualizacao,date,S_TELEFONE,dt_atualizacao,timestamp,Não se aplica
+,,,,,
+pessoaFisica.telefones[].telefone.tipoTelefone,Object,S_TIPO_TELEFONE,Não se aplica,Não se aplica,Não se aplica
+pessoaFisica.telefones[].telefone.tipoTelefone.id,integer,S_TIPO_TELEFONE,id_tipo_telefone,integer,Não se aplica
+pessoaFisica.telefones[].telefone.tipoTelefone.descricao,string,S_TIPO_TELEFONE,ds_tipo_telefone,varchar,Não se aplica
+,,,,,
+pessoaFisica.sexo,Object,S_SEXO,Não se aplica,Não se aplica,Não se aplica
+pessoaFisica.sexo.id,integer,S_SEXO,id_sexo,integer,Não se aplica
+pessoaFisica.sexo.nome,string,S_SEXO,nm_sexo,varchar,Não se aplica
+,,,,,
+pessoaFisica.nacionalidade,Object,S_NACIONALIDADE,Não se aplica,Não se aplica,Não se aplica
+pessoaFisica.nacionalidade.id,string,S_NACIONALIDADE,id_nacionalidade,uuid,Não se aplica
+pessoaFisica.nacionalidade.codigo,string,S_NACIONALIDADE,cd_nacionalidade,varchar,Não se aplica
+pessoaFisica.nacionalidade.nome,string,S_NACIONALIDADE,nm_nacionalidade,varchar,Não se aplica
+pessoaFisica.nacionalidade.siglaPais,string,S_NACIONALIDADE,sg_pais,varchar,Não se aplica
+,,,,,
+pessoaFisica.codigoMunicipio,Object,S_MUNICIPIO,Não se aplica,Não se aplica,Não se aplica
+pessoaFisica.codigoMunicipio,string,S_MUNICIPIO,cd_municipio,varchar,Não se aplica
+pessoaFisica.codigoMunicipio.codigoUf,string,S_MUNICIPIO,cd_uf,varchar,Não se aplica
+pessoaFisica.codigoMunicipio.siglaUf,string,S_MUNICIPIO,sg_uf,varchar,Não se aplica
+pessoaFisica.codigoMunicipio.nome,string,S_MUNICIPIO,nm_municipio,varchar,Não se aplica
+,,,,,
+pessoaFisica.estadoCivil,Object,S_TIPO_ESTADO_CIVIL,Não se aplica,Não se aplica,Não se aplica
+pessoaFisica.estadoCivil.id,integer,S_TIPO_ESTADO_CIVIL,id_tipo_estado_civil,integer,Não se aplica
+pessoaFisica.estadoCivil.descricao,string,S_TIPO_ESTADO_CIVIL,nm_tipo_estado_civil,varchar,Não se aplica
+,,,,,
+pessoaFisica.etnia,Object,S_TIPO_ETNIA,Não se aplica,Não se aplica,Não se aplica
+pessoaFisica.etnia.id,integer,S_TIPO_ETNIA,id_tipo_etnia,integer,Não se aplica
+pessoaFisica.etnia.nome,string,S_TIPO_ETNIA,nm_tipo_etnia,varchar,Não se aplica
+,,,,,
+pessoaFisica.escolaridade,Object,S_TIPO_ESCOLARIDADE,Não se aplica,Não se aplica,Não se aplica
+pessoaFisica.escolaridade.id,integer,S_TIPO_ESCOLARIDADE,id_tipo_escolaridade,integer,Não se aplica
+pessoaFisica.escolaridade.descricao,string,S_TIPO_ESCOLARIDADE,ds_tipo_escolaridade,varchar,Não se aplica
+,,,,,
+,,,,,
+tipoMembro,Object,S_TIPO_MEMBRO_FAMILIAR,Não se aplica,Não se aplica,Não se aplica
+tipoMembro.id,integer,S_TIPO_MEMBRO_FAMILIAR,id_tipo_membro_familiar,integer,Não se aplica
+tipoMembro.nome,string,S_TIPO_MEMBRO_FAMILIAR,nm_tipo_membro_familiar,varchar,Não se aplica
