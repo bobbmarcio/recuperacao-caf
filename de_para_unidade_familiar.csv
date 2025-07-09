@@ -1,0 +1,92 @@
+Collection: unidade_familiar,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5
+Campo (Mongo),Tipo de campo (Mongo),Tabela (Postgres),Campo (Postgres),Tipo de campo (Postgres),Funcão geradora (Postgres)
+_id,ObjectId,Não se aplica,Não se aplica,Não se aplica,Não se aplica
+_versao,integer,Não se aplica,Não se aplica,Não se aplica,Não se aplica
+idUnidadeFamiliar,string,S_UNIDADE_FAMILIAR,id_unidade_familiar,uuid,Não se aplica
+possuiMaoObraContratada,boolean,S_UNIDADE_FAMILIAR,st_possui_mao_obra,boolean,Não se aplica
+dataValidade,date,S_UNIDADE_FAMILIAR,dt_validade,date,Não se aplica
+descricaoInativacao,string,S_UNIDADE_FAMILIAR,ds_inativacao,varchar,Não se aplica
+dataCriacao,string,S_UNIDADE_FAMILIAR,dt_criacao,date,Não se aplica
+dataAtualizacao,date,S_UNIDADE_FAMILIAR,dt_atualizacao,date,Não se aplica
+dataAtivacao,date,S_UNIDADE_FAMILIAR,dt_ativacao,date,Não se aplica
+dataPrimeiraAtivacao,string,S_UNIDADE_FAMILIAR,dt_primeira_ativacao,date,Não se aplica
+dataBloqueio,string,S_UNIDADE_FAMILIAR,dt_bloqueio,date,Não se aplica
+dataInativacao,string,S_UNIDADE_FAMILIAR,dt_inativacao,date,Não se aplica
+migradaCaf2,boolean,S_UNIDADE_FAMILIAR,st_migrada_caf_2,boolean,Não se aplica
+possuiVersaoCaf3,boolean,S_UNIDADE_FAMILIAR,st_possui_versao_caf3,boolean,Não se aplica
+migradaIncra,boolean,S_UNIDADE_FAMILIAR,st_migrada_incra,boolean,Não se aplica
+,,,,,
+,,,,,
+tipoTerreno,Object,S_TIPO_TERRENO_UFPR,Não se aplica,Não se aplica,Não se aplica
+tipoTerreno.id,integer,S_TIPO_TERRENO_UFPR,id_tipo_terreno_ufpr,integer,Não se aplica
+tipoTerreno.descricao,string,S_TIPO_TERRENO_UFPR,nm_tipo_terreno_ufpr,varchar,Não se aplica
+,,,,,
+,,,,,
+caracterizacaoArea,Object,S_CARACTERIZACAO_AREA,Não se aplica,Não se aplica,Não se aplica
+caracterizacaoArea.id,integer,S_CARACTERIZACAO_AREA,id_caracterizacao_area,integer,Não se aplica
+caracterizacaoArea.descricao,string,S_CARACTERIZACAO_AREA,nm_caracterizacao_area,varchar,Não se aplica
+,,,,,
+,,,,,
+tipoSituacao,Object,S_TIPO_SITUACAO_UNIDADE_FAMILIAR,Não se aplica,Não se aplica,Não se aplica
+tipoSituacao.id,integer,S_TIPO_SITUACAO_UNIDADE_FAMILIAR,id_tipo_situacao_unidade_familiar,integer,Não se aplica
+tipoSituacao.descricao,string,S_TIPO_SITUACAO_UNIDADE_FAMILIAR,ds_situacao_unidade_familiar,varchar,Não se aplica
+,,,,,
+,,,,,
+caf,Object,S_CAF,Não se aplica,Não se aplica,Não se aplica
+caf.id,string,S_CAF,id_caf,uuid,Não se aplica
+caf.numeroCaf,integer,S_CAF,nr_caf,integer,Não se aplica
+caf.uf,string,S_CAF,uf,varchar,Não se aplica
+caf.dataCriacao,string,S_CAF,dt_criacao,date,Não se aplica
+,,,,,
+caf.tipoCaf,Object,S_TIPO_CAF,Não se aplica,Não se aplica,Não se aplica
+caf.tipoCaf.id,integer,S_TIPO_CAF,id_tipo_caf,integer,Não se aplica
+caf.tipoCaf.descricao,string,S_TIPO_CAF,ds_tipo_caf,varchar,Não se aplica
+,,,,,
+caf.entidadeEmissora,Object,S_ENTIDADE_EMISSORA,Não se aplica,Não se aplica,Não se aplica
+caf.entidadeEmissora.id,string,S_ENTIDADE_EMISSORA,id_entidade_emissora,uuid,Não se aplica
+caf.entidadeEmissora.cnpj,string,S_ENTIDADE_EMISSORA,nr_cnpj,varchar,Não se aplica
+caf.entidadeEmissora.razaoSocial,string,S_ENTIDADE_EMISSORA,nm_razao_social,varchar,Não se aplica
+caf.entidadeEmissora.dataCriacao,date,S_ENTIDADE_EMISSORA,dt_criacao,timestamp,Não se aplica
+caf.entidadeEmissora.dataInativacao,string,S_ENTIDADE_EMISSORA,dt_inativacao,timestamp,Não se aplica
+caf.entidadeEmissora.motivoInativacao,string,S_ENTIDADE_EMISSORA,ds_motivo_inativacao,varchar,Não se aplica
+,,,,,
+,,,,,
+entidadeEmissora,Object,S_ENTIDADE_EMISSORA,Não se aplica,Não se aplica,Não se aplica
+entidadeEmissora.id,string,S_ENTIDADE_EMISSORA,id_entidade_emissora,uuid,Não se aplica
+entidadeEmissora.cnpj,string,S_ENTIDADE_EMISSORA,nr_cnpj,varchar,Não se aplica
+entidadeEmissora.razaoSocial,string,S_ENTIDADE_EMISSORA,nm_razao_social,varchar,Não se aplica
+entidadeEmissora.dataCriacao,date,S_ENTIDADE_EMISSORA,dt_criacao,timestamp,Não se aplica
+entidadeEmissora.dataInativacao,string,S_ENTIDADE_EMISSORA,dt_inativacao,timestamp,Não se aplica
+entidadeEmissora.motivoInativacao,string,S_ENTIDADE_EMISSORA,ds_motivo_inativacao,varchar,Não se aplica
+,,,,,
+,,,,,
+enderecoPessoa,Object,S_ENDERECO_UFPR_PESSOA,Não se aplica,Não se aplica,Não se aplica
+enderecoPessoa.id,string,S_ENDERECO_UFPR_PESSOA,id_endereco_ufpr_pessoa,uuid,Não se aplica
+,,,,,
+enderecoPessoa.endereco,Object,S_ENDERECO,Não se aplica,Não se aplica,Não se aplica
+enderecoPessoa.endereco.id,string,S_ENDERECO,id_endereco,uuid,Não se aplica
+enderecoPessoa.endereco.uf,string,S_ENDERECO,sg_uf,varchar,Não se aplica
+enderecoPessoa.endereco.cep,string,S_ENDERECO,nr_cep,varchar,Não se aplica
+enderecoPessoa.endereco.logradouro,string,S_ENDERECO,ds_logradouro,varchar,Não se aplica
+enderecoPessoa.endereco.complemento,string,S_ENDERECO,ds_complemento,varchar,Não se aplica
+enderecoPessoa.endereco.numero,integer/string,S_ENDERECO,nr_logradouro,varchar,Não se aplica
+enderecoPessoa.endereco.referencia,string,S_ENDERECO,ds_referencia,varchar,Não se aplica
+enderecoPessoa.endereco.dataCriacao,date,S_ENDERECO,dt_criacao,timestamp,Não se aplica
+enderecoPessoa.endereco.dataAtualizacao,date,S_ENDERECO,dt_atualizacao,timestamp,Não se aplica
+,,,,,
+enderecoPessoa.endereco.codigoMunicipio,Object,S_MUNICIPIO,Não se aplica,Não se aplica,Não se aplica
+enderecoPessoa.endereco.codigoMunicipio.codigoMunicipio,string,S_MUNICIPIO,cd_municipio,varchar,Não se aplica
+enderecoPessoa.endereco.codigoMunicipio.codgoUf,string,S_MUNICIPIO,cd_uf,varchar,Não se aplica
+enderecoPessoa.endereco.codigoMunicipio.siglaUf,string,S_MUNICIPIO,sg_uf,varchar,Não se aplica
+enderecoPessoa.endereco.codigoMunicipio.nome,string,S_MUNICIPIO,nm_municipio,varchar,Não se aplica
+,,,,,
+,,,,,
+enquadramentoRendas,array,S_UNIDADE_FAMILIAR_ENQUADRAMENTO_RENDA,Não se aplica,Não se aplica,Não se aplica
+enquadramentoRendas[].id,string,S_UNIDADE_FAMILIAR_ENQUADRAMENTO_RENDA,id_unidade_familiar_enquadramento_renda,uuid,Não se aplica
+,,,,,
+enquadramentoRendas[].tipoEnquadramentoRenda,Object,S_TIPO_ENQUADRAMENTO_RENDA,Não se aplica,Não se aplica,Não se aplica
+enquadramentoRendas[].tipoEnquadramentoRenda.id,integer,S_TIPO_ENQUADRAMENTO_RENDA,id_tipo_enquadramento_renda,integer,Não se aplica
+enquadramentoRendas[].tipoEnquadramentoRenda.descricao,string,S_TIPO_ENQUADRAMENTO_RENDA,ds_tipo_enquadramento_renda,varchar,Não se aplica
+,,,,,
+,,,,,
+numeroCaf,string,Não se aplica,Não se aplica,Não se aplica,"fn_compor_caf_para_exibicao(caf.nr_caf, caf.id_tipo_caf)"

@@ -1,0 +1,8 @@
+2025-06-26 09:30:32.149 | INFO     | __main__:validate_configuration:62 - Validando configuração: config/monitoring_config.yaml
+2025-06-26 09:30:32.150 | INFO     | __main__:validate_configuration:63 - Schema do banco: caf_20250301
+2025-06-26 09:30:36.278 | ERROR    | __main__:get_db_schema:56 - Erro ao conectar com banco: connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-06-26 09:30:36.283 | ERROR    | __main__:validate_configuration:74 - Não foi possível obter estrutura do banco

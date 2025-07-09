@@ -1,0 +1,13 @@
+2025-06-26 09:00:01 | INFO | mongo_inserter:connect:33 | Conectando ao MongoDB: audit_db
+2025-06-26 09:00:01 | INFO | mongo_inserter:connect:46 | Conexão com MongoDB estabelecida com sucesso
+2025-06-26 09:00:01 | INFO | mongo_inserter:create_indexes:263 | Criando índices no MongoDB
+2025-06-26 09:00:01 | INFO | mongo_inserter:create_indexes:278 | Índices criados com sucesso
+2025-06-26 09:00:01 | INFO | postgresql_processor:process_large_dumps:58 | Iniciando processamento de 4 dumps grandes
+2025-06-26 09:00:01 | INFO | postgresql_processor:_create_temp_database:100 | Criando banco temporário: temp_dump_0_1750939201
+2025-06-26 09:00:02 | INFO | postgresql_processor:_create_temp_database:125 | Banco temp_dump_0_1750939201 criado com sucesso
+2025-06-26 09:00:02 | INFO | postgresql_processor:_restore_dump:158 | Restaurando dump dump_2024-01-16_inicial.sql no banco temp_dump_0_1750939201
+2025-06-26 09:00:02 | ERROR | postgresql_processor:_create_temp_database:145 | Erro ao criar banco temporário temp_dump_0_1750939201: [WinError 2] O sistema não pode encontrar o arquivo especificado
+2025-06-26 09:00:02 | INFO | postgresql_processor:_drop_database:452 | Banco temporário temp_dump_0_1750939201 removido
+2025-06-26 09:00:02 | INFO | postgresql_processor:_cleanup_temp_databases:461 | Limpando bancos temporários...
+2025-06-26 09:00:02 | INFO | postgresql_processor:_cleanup_temp_databases:474 | Limpeza de bancos temporários concluída
+2025-06-26 09:00:02 | INFO | mongo_inserter:disconnect:57 | Conexão com MongoDB fechada

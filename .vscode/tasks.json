@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Análise Incremental de Dumps",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"src/main.py",
+				"analyze",
+				"--config",
+				"config/monitoring_config.yaml",
+				"--dump-dir",
+				"dumps/"
+			],
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

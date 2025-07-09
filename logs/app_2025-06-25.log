@@ -1,0 +1,242 @@
+2025-06-25 16:50:29 | INFO | mongo_inserter:connect:33 | Conectando ao MongoDB: audit_db
+2025-06-25 16:50:35 | ERROR | mongo_inserter:connect:50 | Erro ao conectar com MongoDB: localhost:27017: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 685c53055f0ff05a00b5d1cf, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-06-25 16:50:35 | INFO | mongo_inserter:disconnect:57 | Conexão com MongoDB fechada
+2025-06-25 16:53:03 | INFO | dump_parser:list_dump_files:235 | Encontrados 2 arquivos de dump em C:\Users\marci\Repositorios\MAPA\recuperacao-caf\dumps
+2025-06-25 16:53:03 | INFO | dump_parser:parse_dump_file:50 | Iniciando parse do dump: C:\Users\marci\Repositorios\MAPA\recuperacao-caf\dumps\dump_2024-01-16_inicial.sql
+2025-06-25 16:53:03 | INFO | dump_parser:parse_dump_file:72 | Tabela usuarios: 4 registros extraídos
+2025-06-25 16:53:03 | INFO | dump_parser:parse_dump_file:72 | Tabela produtos: 4 registros extraídos
+2025-06-25 16:53:03 | WARNING | dump_parser:parse_dump_file:74 | Tabela pedidos não encontrada no dump
+2025-06-25 16:53:03 | WARNING | dump_parser:parse_dump_file:74 | Tabela configuracoes não encontrada no dump
+2025-06-25 16:53:03 | INFO | dump_parser:parse_dump_file:80 | Parse concluído. 2 tabelas processadas
+2025-06-25 16:53:03 | INFO | dump_parser:parse_dump_file:50 | Iniciando parse do dump: C:\Users\marci\Repositorios\MAPA\recuperacao-caf\dumps\dump_2024-01-17_alteracoes.sql
+2025-06-25 16:53:03 | INFO | dump_parser:parse_dump_file:72 | Tabela usuarios: 5 registros extraídos
+2025-06-25 16:53:03 | INFO | dump_parser:parse_dump_file:72 | Tabela produtos: 5 registros extraídos
+2025-06-25 16:53:03 | WARNING | dump_parser:parse_dump_file:74 | Tabela pedidos não encontrada no dump
+2025-06-25 16:53:03 | WARNING | dump_parser:parse_dump_file:74 | Tabela configuracoes não encontrada no dump
+2025-06-25 16:53:03 | INFO | dump_parser:parse_dump_file:80 | Parse concluído. 2 tabelas processadas
+2025-06-25 16:53:03 | INFO | data_comparator:compare_dumps:64 | Iniciando comparação entre dump_2024-01-16_inicial.sql e dump_2024-01-17_alteracoes.sql
+2025-06-25 16:53:03 | INFO | data_comparator:compare_dumps:78 | Comparando tabela: produtos
+2025-06-25 16:53:03 | INFO | data_comparator:compare_dumps:93 | Tabela produtos: 9 alterações detectadas
+2025-06-25 16:53:03 | INFO | data_comparator:compare_dumps:78 | Comparando tabela: usuarios
+2025-06-25 16:53:03 | WARNING | data_comparator:_compare_table_data:143 | Coluna password_hash não encontrada na tabela usuarios
+2025-06-25 16:53:03 | INFO | data_comparator:compare_dumps:93 | Tabela usuarios: 7 alterações detectadas
+2025-06-25 16:53:03 | INFO | data_comparator:compare_dumps:103 | Comparação concluída: 16 alterações em 2 tabelas
+2025-06-25 16:58:23 | INFO | mongo_inserter:connect:33 | Conectando ao MongoDB: audit_db
+2025-06-25 16:58:28 | ERROR | mongo_inserter:connect:50 | Erro ao conectar com MongoDB: localhost:27017: connection closed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 685c54dfd657eff8d90e785d, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: connection closed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-06-25 16:58:28 | INFO | mongo_inserter:disconnect:57 | Conexão com MongoDB fechada
+2025-06-25 16:58:39 | INFO | mongo_inserter:connect:33 | Conectando ao MongoDB: audit_db
+2025-06-25 16:58:39 | INFO | mongo_inserter:connect:46 | Conexão com MongoDB estabelecida com sucesso
+2025-06-25 16:58:39 | INFO | mongo_inserter:disconnect:57 | Conexão com MongoDB fechada
+2025-06-25 16:59:06 | INFO | mongo_inserter:connect:33 | Conectando ao MongoDB: audit_db
+2025-06-25 16:59:06 | INFO | mongo_inserter:connect:46 | Conexão com MongoDB estabelecida com sucesso
+2025-06-25 16:59:06 | INFO | mongo_inserter:disconnect:57 | Conexão com MongoDB fechada
+2025-06-25 17:00:08 | INFO | mongo_inserter:connect:33 | Conectando ao MongoDB: audit_db
+2025-06-25 17:00:08 | INFO | mongo_inserter:connect:46 | Conexão com MongoDB estabelecida com sucesso
+2025-06-25 17:00:08 | INFO | mongo_inserter:disconnect:57 | Conexão com MongoDB fechada
+2025-06-25 17:02:10 | INFO | mongo_inserter:connect:33 | Conectando ao MongoDB: audit_db
+2025-06-25 17:02:10 | INFO | mongo_inserter:connect:46 | Conexão com MongoDB estabelecida com sucesso
+2025-06-25 17:02:10 | INFO | mongo_inserter:create_indexes:263 | Criando índices no MongoDB
+2025-06-25 17:02:10 | ERROR | mongo_inserter:create_indexes:282 | Erro ao criar índices: Command createIndexes requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command createIndexes requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:02:10 | INFO | dump_parser:list_dump_files:235 | Encontrados 2 arquivos de dump em ./dumps
+2025-06-25 17:02:11 | INFO | dump_parser:parse_dump_file:50 | Iniciando parse do dump: dumps\dump_2024-01-16_inicial.sql
+2025-06-25 17:02:11 | INFO | dump_parser:parse_dump_file:72 | Tabela usuarios: 4 registros extraídos
+2025-06-25 17:02:11 | INFO | dump_parser:parse_dump_file:72 | Tabela produtos: 4 registros extraídos
+2025-06-25 17:02:11 | WARNING | dump_parser:parse_dump_file:74 | Tabela pedidos não encontrada no dump
+2025-06-25 17:02:11 | WARNING | dump_parser:parse_dump_file:74 | Tabela configuracoes não encontrada no dump
+2025-06-25 17:02:11 | INFO | dump_parser:parse_dump_file:80 | Parse concluído. 2 tabelas processadas
+2025-06-25 17:02:11 | INFO | mongo_inserter:disconnect:57 | Conexão com MongoDB fechada
+2025-06-25 17:03:36 | INFO | mongo_inserter:connect:33 | Conectando ao MongoDB: audit_db
+2025-06-25 17:03:36 | INFO | mongo_inserter:connect:46 | Conexão com MongoDB estabelecida com sucesso
+2025-06-25 17:03:36 | INFO | mongo_inserter:create_indexes:263 | Criando índices no MongoDB
+2025-06-25 17:03:36 | ERROR | mongo_inserter:create_indexes:282 | Erro ao criar índices: Command createIndexes requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command createIndexes requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:03:36 | INFO | dump_parser:list_dump_files:235 | Encontrados 2 arquivos de dump em ./dumps
+2025-06-25 17:03:36 | INFO | dump_parser:parse_dump_file:50 | Iniciando parse do dump: dumps\dump_2024-01-16_inicial.sql
+2025-06-25 17:03:36 | INFO | dump_parser:parse_dump_file:72 | Tabela usuarios: 4 registros extraídos
+2025-06-25 17:03:36 | INFO | dump_parser:parse_dump_file:72 | Tabela produtos: 4 registros extraídos
+2025-06-25 17:03:36 | WARNING | dump_parser:parse_dump_file:74 | Tabela pedidos não encontrada no dump
+2025-06-25 17:03:36 | WARNING | dump_parser:parse_dump_file:74 | Tabela configuracoes não encontrada no dump
+2025-06-25 17:03:36 | INFO | dump_parser:parse_dump_file:80 | Parse concluído. 2 tabelas processadas
+2025-06-25 17:03:36 | ERROR | mongo_inserter:insert_dump_metadata:170 | Erro ao inserir metadados do dump: Command insert requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command insert requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:03:36 | INFO | dump_parser:parse_dump_file:50 | Iniciando parse do dump: dumps\dump_2024-01-17_alteracoes.sql
+2025-06-25 17:03:36 | INFO | dump_parser:parse_dump_file:72 | Tabela usuarios: 5 registros extraídos
+2025-06-25 17:03:36 | INFO | dump_parser:parse_dump_file:72 | Tabela produtos: 5 registros extraídos
+2025-06-25 17:03:36 | WARNING | dump_parser:parse_dump_file:74 | Tabela pedidos não encontrada no dump
+2025-06-25 17:03:36 | WARNING | dump_parser:parse_dump_file:74 | Tabela configuracoes não encontrada no dump
+2025-06-25 17:03:36 | INFO | dump_parser:parse_dump_file:80 | Parse concluído. 2 tabelas processadas
+2025-06-25 17:03:36 | ERROR | mongo_inserter:insert_dump_metadata:170 | Erro ao inserir metadados do dump: Command insert requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command insert requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:03:36 | INFO | data_comparator:compare_dumps:64 | Iniciando comparação entre dump_2024-01-16_inicial.sql e dump_2024-01-17_alteracoes.sql
+2025-06-25 17:03:36 | INFO | data_comparator:compare_dumps:78 | Comparando tabela: produtos
+2025-06-25 17:03:36 | INFO | data_comparator:compare_dumps:93 | Tabela produtos: 9 alterações detectadas
+2025-06-25 17:03:36 | INFO | data_comparator:compare_dumps:78 | Comparando tabela: usuarios
+2025-06-25 17:03:36 | WARNING | data_comparator:_compare_table_data:143 | Coluna password_hash não encontrada na tabela usuarios
+2025-06-25 17:03:36 | INFO | data_comparator:compare_dumps:93 | Tabela usuarios: 7 alterações detectadas
+2025-06-25 17:03:36 | INFO | data_comparator:compare_dumps:103 | Comparação concluída: 16 alterações em 2 tabelas
+2025-06-25 17:03:36 | INFO | mongo_inserter:insert_changes:78 | Inserindo 16 alterações no MongoDB
+2025-06-25 17:03:36 | ERROR | mongo_inserter:insert_changes:93 | Erro ao inserir alterações no MongoDB: Command insert requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command insert requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:03:36 | INFO | mongo_inserter:disconnect:57 | Conexão com MongoDB fechada
+2025-06-25 17:04:07 | INFO | mongo_inserter:connect:33 | Conectando ao MongoDB: audit_db
+2025-06-25 17:04:07 | INFO | mongo_inserter:connect:46 | Conexão com MongoDB estabelecida com sucesso
+2025-06-25 17:04:07 | INFO | mongo_inserter:create_indexes:263 | Criando índices no MongoDB
+2025-06-25 17:04:07 | ERROR | mongo_inserter:create_indexes:282 | Erro ao criar índices: Command createIndexes requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command createIndexes requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:04:07 | INFO | dump_parser:list_dump_files:235 | Encontrados 2 arquivos de dump em ./dumps
+2025-06-25 17:04:07 | INFO | dump_parser:parse_dump_file:50 | Iniciando parse do dump: dumps\dump_2024-01-16_inicial.sql
+2025-06-25 17:04:07 | INFO | dump_parser:parse_dump_file:72 | Tabela usuarios: 4 registros extraídos
+2025-06-25 17:04:07 | INFO | dump_parser:parse_dump_file:72 | Tabela produtos: 4 registros extraídos
+2025-06-25 17:04:07 | WARNING | dump_parser:parse_dump_file:74 | Tabela pedidos não encontrada no dump
+2025-06-25 17:04:07 | WARNING | dump_parser:parse_dump_file:74 | Tabela configuracoes não encontrada no dump
+2025-06-25 17:04:07 | INFO | dump_parser:parse_dump_file:80 | Parse concluído. 2 tabelas processadas
+2025-06-25 17:04:07 | ERROR | mongo_inserter:insert_dump_metadata:170 | Erro ao inserir metadados do dump: Command insert requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command insert requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:04:07 | INFO | dump_parser:parse_dump_file:50 | Iniciando parse do dump: dumps\dump_2024-01-17_alteracoes.sql
+2025-06-25 17:04:07 | INFO | dump_parser:parse_dump_file:72 | Tabela usuarios: 5 registros extraídos
+2025-06-25 17:04:07 | INFO | dump_parser:parse_dump_file:72 | Tabela produtos: 5 registros extraídos
+2025-06-25 17:04:07 | WARNING | dump_parser:parse_dump_file:74 | Tabela pedidos não encontrada no dump
+2025-06-25 17:04:07 | WARNING | dump_parser:parse_dump_file:74 | Tabela configuracoes não encontrada no dump
+2025-06-25 17:04:07 | INFO | dump_parser:parse_dump_file:80 | Parse concluído. 2 tabelas processadas
+2025-06-25 17:04:07 | ERROR | mongo_inserter:insert_dump_metadata:170 | Erro ao inserir metadados do dump: Command insert requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command insert requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:04:07 | INFO | data_comparator:compare_dumps:64 | Iniciando comparação entre dump_2024-01-16_inicial.sql e dump_2024-01-17_alteracoes.sql
+2025-06-25 17:04:07 | INFO | data_comparator:compare_dumps:78 | Comparando tabela: produtos
+2025-06-25 17:04:07 | INFO | data_comparator:compare_dumps:93 | Tabela produtos: 9 alterações detectadas
+2025-06-25 17:04:07 | INFO | data_comparator:compare_dumps:78 | Comparando tabela: usuarios
+2025-06-25 17:04:07 | WARNING | data_comparator:_compare_table_data:143 | Coluna password_hash não encontrada na tabela usuarios
+2025-06-25 17:04:07 | INFO | data_comparator:compare_dumps:93 | Tabela usuarios: 7 alterações detectadas
+2025-06-25 17:04:07 | INFO | data_comparator:compare_dumps:103 | Comparação concluída: 16 alterações em 2 tabelas
+2025-06-25 17:04:07 | INFO | mongo_inserter:insert_changes:78 | Inserindo 16 alterações no MongoDB
+2025-06-25 17:04:07 | ERROR | mongo_inserter:insert_changes:93 | Erro ao inserir alterações no MongoDB: Command insert requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command insert requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:04:07 | INFO | mongo_inserter:disconnect:57 | Conexão com MongoDB fechada
+2025-06-25 17:05:54 | INFO | mongo_inserter:connect:33 | Conectando ao MongoDB: audit_db
+2025-06-25 17:05:54 | INFO | mongo_inserter:connect:46 | Conexão com MongoDB estabelecida com sucesso
+2025-06-25 17:05:54 | INFO | mongo_inserter:create_indexes:263 | Criando índices no MongoDB
+2025-06-25 17:05:54 | ERROR | mongo_inserter:create_indexes:282 | Erro ao criar índices: Command createIndexes requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command createIndexes requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:05:54 | INFO | dump_parser:list_dump_files:235 | Encontrados 2 arquivos de dump em ./dumps
+2025-06-25 17:05:54 | INFO | dump_parser:parse_dump_file:50 | Iniciando parse do dump: dumps\dump_2024-01-16_inicial.sql
+2025-06-25 17:05:54 | INFO | dump_parser:parse_dump_file:72 | Tabela usuarios: 4 registros extraídos
+2025-06-25 17:05:54 | INFO | dump_parser:parse_dump_file:72 | Tabela produtos: 4 registros extraídos
+2025-06-25 17:05:54 | WARNING | dump_parser:parse_dump_file:74 | Tabela pedidos não encontrada no dump
+2025-06-25 17:05:54 | WARNING | dump_parser:parse_dump_file:74 | Tabela configuracoes não encontrada no dump
+2025-06-25 17:05:54 | INFO | dump_parser:parse_dump_file:80 | Parse concluído. 2 tabelas processadas
+2025-06-25 17:05:54 | ERROR | mongo_inserter:insert_dump_metadata:170 | Erro ao inserir metadados do dump: Command insert requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command insert requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:05:54 | INFO | dump_parser:parse_dump_file:50 | Iniciando parse do dump: dumps\dump_2024-01-17_alteracoes.sql
+2025-06-25 17:05:54 | INFO | dump_parser:parse_dump_file:72 | Tabela usuarios: 5 registros extraídos
+2025-06-25 17:05:54 | INFO | dump_parser:parse_dump_file:72 | Tabela produtos: 5 registros extraídos
+2025-06-25 17:05:54 | WARNING | dump_parser:parse_dump_file:74 | Tabela pedidos não encontrada no dump
+2025-06-25 17:05:54 | WARNING | dump_parser:parse_dump_file:74 | Tabela configuracoes não encontrada no dump
+2025-06-25 17:05:54 | INFO | dump_parser:parse_dump_file:80 | Parse concluído. 2 tabelas processadas
+2025-06-25 17:05:54 | ERROR | mongo_inserter:insert_dump_metadata:170 | Erro ao inserir metadados do dump: Command insert requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command insert requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:05:54 | INFO | data_comparator:compare_dumps:64 | Iniciando comparação entre dump_2024-01-16_inicial.sql e dump_2024-01-17_alteracoes.sql
+2025-06-25 17:05:54 | INFO | data_comparator:compare_dumps:78 | Comparando tabela: produtos
+2025-06-25 17:05:54 | INFO | data_comparator:compare_dumps:93 | Tabela produtos: 9 alterações detectadas
+2025-06-25 17:05:54 | INFO | data_comparator:compare_dumps:78 | Comparando tabela: usuarios
+2025-06-25 17:05:54 | WARNING | data_comparator:_compare_table_data:143 | Coluna password_hash não encontrada na tabela usuarios
+2025-06-25 17:05:54 | INFO | data_comparator:compare_dumps:93 | Tabela usuarios: 7 alterações detectadas
+2025-06-25 17:05:54 | INFO | data_comparator:compare_dumps:103 | Comparação concluída: 16 alterações em 2 tabelas
+2025-06-25 17:05:54 | INFO | mongo_inserter:insert_changes:78 | Inserindo 16 alterações no MongoDB
+2025-06-25 17:05:54 | ERROR | mongo_inserter:insert_changes:93 | Erro ao inserir alterações no MongoDB: Command insert requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command insert requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:05:54 | INFO | mongo_inserter:disconnect:57 | Conexão com MongoDB fechada
+2025-06-25 17:07:34 | INFO | mongo_inserter:connect:33 | Conectando ao MongoDB: audit_db
+2025-06-25 17:07:34 | INFO | mongo_inserter:connect:46 | Conexão com MongoDB estabelecida com sucesso
+2025-06-25 17:07:34 | INFO | dump_parser:list_dump_files:235 | Encontrados 2 arquivos de dump em ./dumps
+2025-06-25 17:07:34 | INFO | dump_parser:parse_dump_file:50 | Iniciando parse do dump: dumps\dump_2024-01-16_inicial.sql
+2025-06-25 17:07:34 | INFO | dump_parser:parse_dump_file:72 | Tabela usuarios: 4 registros extraídos
+2025-06-25 17:07:34 | INFO | dump_parser:parse_dump_file:72 | Tabela produtos: 4 registros extraídos
+2025-06-25 17:07:34 | WARNING | dump_parser:parse_dump_file:74 | Tabela pedidos não encontrada no dump
+2025-06-25 17:07:34 | WARNING | dump_parser:parse_dump_file:74 | Tabela configuracoes não encontrada no dump
+2025-06-25 17:07:34 | INFO | dump_parser:parse_dump_file:80 | Parse concluído. 2 tabelas processadas
+2025-06-25 17:07:34 | ERROR | mongo_inserter:insert_dump_metadata:170 | Erro ao inserir metadados do dump: Command insert requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command insert requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:07:34 | INFO | dump_parser:parse_dump_file:50 | Iniciando parse do dump: dumps\dump_2024-01-17_alteracoes.sql
+2025-06-25 17:07:34 | INFO | dump_parser:parse_dump_file:72 | Tabela usuarios: 5 registros extraídos
+2025-06-25 17:07:34 | INFO | dump_parser:parse_dump_file:72 | Tabela produtos: 5 registros extraídos
+2025-06-25 17:07:34 | WARNING | dump_parser:parse_dump_file:74 | Tabela pedidos não encontrada no dump
+2025-06-25 17:07:34 | WARNING | dump_parser:parse_dump_file:74 | Tabela configuracoes não encontrada no dump
+2025-06-25 17:07:34 | INFO | dump_parser:parse_dump_file:80 | Parse concluído. 2 tabelas processadas
+2025-06-25 17:07:34 | ERROR | mongo_inserter:insert_dump_metadata:170 | Erro ao inserir metadados do dump: Command insert requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command insert requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:07:34 | INFO | data_comparator:compare_dumps:64 | Iniciando comparação entre dump_2024-01-16_inicial.sql e dump_2024-01-17_alteracoes.sql
+2025-06-25 17:07:34 | INFO | data_comparator:compare_dumps:78 | Comparando tabela: usuarios
+2025-06-25 17:07:34 | WARNING | data_comparator:_compare_table_data:143 | Coluna password_hash não encontrada na tabela usuarios
+2025-06-25 17:07:34 | INFO | data_comparator:compare_dumps:93 | Tabela usuarios: 7 alterações detectadas
+2025-06-25 17:07:34 | INFO | data_comparator:compare_dumps:78 | Comparando tabela: produtos
+2025-06-25 17:07:34 | INFO | data_comparator:compare_dumps:93 | Tabela produtos: 9 alterações detectadas
+2025-06-25 17:07:34 | INFO | data_comparator:compare_dumps:103 | Comparação concluída: 16 alterações em 2 tabelas
+2025-06-25 17:07:34 | INFO | mongo_inserter:insert_changes:78 | Inserindo 16 alterações no MongoDB
+2025-06-25 17:07:34 | ERROR | mongo_inserter:insert_changes:93 | Erro ao inserir alterações no MongoDB: Command insert requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command insert requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:07:34 | INFO | mongo_inserter:disconnect:57 | Conexão com MongoDB fechada
+2025-06-25 17:10:01 | INFO | mongo_inserter:connect:33 | Conectando ao MongoDB: audit_db
+2025-06-25 17:10:01 | INFO | mongo_inserter:connect:46 | Conexão com MongoDB estabelecida com sucesso
+2025-06-25 17:10:01 | INFO | mongo_inserter:create_indexes:263 | Criando índices no MongoDB
+2025-06-25 17:10:01 | ERROR | mongo_inserter:create_indexes:282 | Erro ao criar índices: Command createIndexes requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command createIndexes requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:10:01 | INFO | dump_parser:list_dump_files:235 | Encontrados 2 arquivos de dump em ./dumps
+2025-06-25 17:10:01 | INFO | dump_parser:parse_dump_file:50 | Iniciando parse do dump: dumps\dump_2024-01-16_inicial.sql
+2025-06-25 17:10:01 | INFO | dump_parser:parse_dump_file:72 | Tabela usuarios: 4 registros extraídos
+2025-06-25 17:10:01 | INFO | dump_parser:parse_dump_file:72 | Tabela produtos: 4 registros extraídos
+2025-06-25 17:10:01 | WARNING | dump_parser:parse_dump_file:74 | Tabela pedidos não encontrada no dump
+2025-06-25 17:10:01 | WARNING | dump_parser:parse_dump_file:74 | Tabela configuracoes não encontrada no dump
+2025-06-25 17:10:01 | INFO | dump_parser:parse_dump_file:80 | Parse concluído. 2 tabelas processadas
+2025-06-25 17:10:01 | ERROR | mongo_inserter:insert_dump_metadata:170 | Erro ao inserir metadados do dump: Command insert requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command insert requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:10:01 | INFO | dump_parser:parse_dump_file:50 | Iniciando parse do dump: dumps\dump_2024-01-17_alteracoes.sql
+2025-06-25 17:10:01 | INFO | dump_parser:parse_dump_file:72 | Tabela usuarios: 5 registros extraídos
+2025-06-25 17:10:01 | INFO | dump_parser:parse_dump_file:72 | Tabela produtos: 5 registros extraídos
+2025-06-25 17:10:01 | WARNING | dump_parser:parse_dump_file:74 | Tabela pedidos não encontrada no dump
+2025-06-25 17:10:01 | WARNING | dump_parser:parse_dump_file:74 | Tabela configuracoes não encontrada no dump
+2025-06-25 17:10:01 | INFO | dump_parser:parse_dump_file:80 | Parse concluído. 2 tabelas processadas
+2025-06-25 17:10:01 | ERROR | mongo_inserter:insert_dump_metadata:170 | Erro ao inserir metadados do dump: Command insert requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command insert requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:10:01 | INFO | data_comparator:compare_dumps:64 | Iniciando comparação entre dump_2024-01-16_inicial.sql e dump_2024-01-17_alteracoes.sql
+2025-06-25 17:10:01 | INFO | data_comparator:compare_dumps:78 | Comparando tabela: usuarios
+2025-06-25 17:10:01 | WARNING | data_comparator:_compare_table_data:143 | Coluna password_hash não encontrada na tabela usuarios
+2025-06-25 17:10:01 | INFO | data_comparator:compare_dumps:93 | Tabela usuarios: 7 alterações detectadas
+2025-06-25 17:10:01 | INFO | data_comparator:compare_dumps:78 | Comparando tabela: produtos
+2025-06-25 17:10:01 | INFO | data_comparator:compare_dumps:93 | Tabela produtos: 9 alterações detectadas
+2025-06-25 17:10:01 | INFO | data_comparator:compare_dumps:103 | Comparação concluída: 16 alterações em 2 tabelas
+2025-06-25 17:10:01 | INFO | mongo_inserter:insert_changes:78 | Inserindo 16 alterações no MongoDB
+2025-06-25 17:10:01 | ERROR | mongo_inserter:insert_changes:93 | Erro ao inserir alterações no MongoDB: Command insert requires authentication, full error: {'ok': 0.0, 'errmsg': 'Command insert requires authentication', 'code': 13, 'codeName': 'Unauthorized'}
+2025-06-25 17:10:01 | INFO | mongo_inserter:disconnect:57 | Conexão com MongoDB fechada
+2025-06-25 17:11:02 | INFO | mongo_inserter:connect:33 | Conectando ao MongoDB: audit_db
+2025-06-25 17:11:02 | INFO | mongo_inserter:connect:46 | Conexão com MongoDB estabelecida com sucesso
+2025-06-25 17:11:02 | INFO | mongo_inserter:create_indexes:263 | Criando índices no MongoDB
+2025-06-25 17:11:02 | INFO | mongo_inserter:create_indexes:278 | Índices criados com sucesso
+2025-06-25 17:11:02 | INFO | dump_parser:list_dump_files:235 | Encontrados 2 arquivos de dump em ./dumps
+2025-06-25 17:11:02 | INFO | dump_parser:parse_dump_file:50 | Iniciando parse do dump: dumps\dump_2024-01-16_inicial.sql
+2025-06-25 17:11:02 | INFO | dump_parser:parse_dump_file:72 | Tabela usuarios: 4 registros extraídos
+2025-06-25 17:11:02 | INFO | dump_parser:parse_dump_file:72 | Tabela produtos: 4 registros extraídos
+2025-06-25 17:11:02 | WARNING | dump_parser:parse_dump_file:74 | Tabela pedidos não encontrada no dump
+2025-06-25 17:11:02 | WARNING | dump_parser:parse_dump_file:74 | Tabela configuracoes não encontrada no dump
+2025-06-25 17:11:02 | INFO | dump_parser:parse_dump_file:80 | Parse concluído. 2 tabelas processadas
+2025-06-25 17:11:02 | INFO | mongo_inserter:insert_dump_metadata:166 | Metadados do dump inseridos: dumps\dump_2024-01-16_inicial.sql
+2025-06-25 17:11:02 | INFO | dump_parser:parse_dump_file:50 | Iniciando parse do dump: dumps\dump_2024-01-17_alteracoes.sql
+2025-06-25 17:11:02 | INFO | dump_parser:parse_dump_file:72 | Tabela usuarios: 5 registros extraídos
+2025-06-25 17:11:02 | INFO | dump_parser:parse_dump_file:72 | Tabela produtos: 5 registros extraídos
+2025-06-25 17:11:02 | WARNING | dump_parser:parse_dump_file:74 | Tabela pedidos não encontrada no dump
+2025-06-25 17:11:02 | WARNING | dump_parser:parse_dump_file:74 | Tabela configuracoes não encontrada no dump
+2025-06-25 17:11:02 | INFO | dump_parser:parse_dump_file:80 | Parse concluído. 2 tabelas processadas
+2025-06-25 17:11:02 | INFO | mongo_inserter:insert_dump_metadata:166 | Metadados do dump inseridos: dumps\dump_2024-01-17_alteracoes.sql
+2025-06-25 17:11:02 | INFO | data_comparator:compare_dumps:64 | Iniciando comparação entre dump_2024-01-16_inicial.sql e dump_2024-01-17_alteracoes.sql
+2025-06-25 17:11:02 | INFO | data_comparator:compare_dumps:78 | Comparando tabela: produtos
+2025-06-25 17:11:02 | INFO | data_comparator:compare_dumps:93 | Tabela produtos: 9 alterações detectadas
+2025-06-25 17:11:02 | INFO | data_comparator:compare_dumps:78 | Comparando tabela: usuarios
+2025-06-25 17:11:02 | WARNING | data_comparator:_compare_table_data:143 | Coluna password_hash não encontrada na tabela usuarios
+2025-06-25 17:11:02 | INFO | data_comparator:compare_dumps:93 | Tabela usuarios: 7 alterações detectadas
+2025-06-25 17:11:02 | INFO | data_comparator:compare_dumps:103 | Comparação concluída: 16 alterações em 2 tabelas
+2025-06-25 17:11:02 | INFO | mongo_inserter:insert_changes:78 | Inserindo 16 alterações no MongoDB
+2025-06-25 17:11:02 | INFO | mongo_inserter:insert_changes:89 | Inseridas 16 alterações no MongoDB
+2025-06-25 17:11:02 | INFO | mongo_inserter:disconnect:57 | Conexão com MongoDB fechada
+2025-06-25 17:13:47 | INFO | mongo_inserter:connect:33 | Conectando ao MongoDB: audit_db
+2025-06-25 17:13:47 | INFO | mongo_inserter:connect:46 | Conexão com MongoDB estabelecida com sucesso
+2025-06-25 17:13:47 | INFO | mongo_inserter:query_changes:244 | Encontradas 5 alterações com os filtros aplicados
+2025-06-25 17:13:47 | INFO | mongo_inserter:disconnect:57 | Conexão com MongoDB fechada
+2025-06-25 17:20:48 | INFO | mongo_inserter:connect:33 | Conectando ao MongoDB: audit_db
+2025-06-25 17:20:48 | INFO | mongo_inserter:connect:46 | Conexão com MongoDB estabelecida com sucesso
+2025-06-25 17:20:48 | INFO | mongo_inserter:create_indexes:263 | Criando índices no MongoDB
+2025-06-25 17:20:48 | INFO | mongo_inserter:create_indexes:278 | Índices criados com sucesso
+2025-06-25 17:20:48 | INFO | postgresql_processor:process_large_dumps:58 | Iniciando processamento de 3 dumps grandes
+2025-06-25 17:20:48 | INFO | postgresql_processor:_create_temp_database:100 | Criando banco temporário: temp_dump_0_1750882848
+2025-06-25 17:20:52 | ERROR | postgresql_processor:_create_temp_database:145 | Erro ao criar banco temporário temp_dump_0_1750882848: connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-06-25 17:20:56 | WARNING | postgresql_processor:_drop_database:457 | Erro ao remover banco temp_dump_0_1750882848: connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+2025-06-25 17:20:56 | INFO | postgresql_processor:_cleanup_temp_databases:461 | Limpando bancos temporários...
+2025-06-25 17:20:56 | INFO | postgresql_processor:_cleanup_temp_databases:474 | Limpeza de bancos temporários concluída
+2025-06-25 17:20:56 | INFO | mongo_inserter:disconnect:57 | Conexão com MongoDB fechada

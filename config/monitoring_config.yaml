@@ -1,0 +1,172 @@
+# Configuração de monitoramento para análise incremental de dumps PostgreSQL CAF
+#
+# Este arquivo define quais tabelas e colunas do sistema CAF devem ser monitoradas 
+# para detectar alterações entre dumps consecutivos.
+# 
+# Baseado na estrutura real importada dos dumps CAF de 2025-03-01 e 2025-04-01
+
+tables:
+  # Tabela principal: Unidade Familiar
+  "S_UNIDADE_FAMILIAR":
+    primary_key: id_unidade_familiar
+    columns:
+      - st_possui_mao_obra                # Possui mão de obra contratada
+      - dt_validade                       # Data de validade 
+      - dt_atualizacao                    # Data de atualização
+      - id_tipo_situacao_unidade_familiar # Situação da unidade (ATIVA, etc)
+      - dt_primeira_ativacao              # Data da primeira ativação
+      - dt_bloqueio                       # Data de bloqueio
+      - dt_inativacao                     # Data de inativação
+      - ds_inativacao                     # Descrição da inativação
+      - id_tipo_terreno_ufpr              # Tipo de terreno
+      - id_caracterizacao_area            # Caracterização da área
+      - dt_ativacao                       # Data de ativação
+      - st_migrada_caf_2                  # Migrada do CAF 2
+      - st_possui_versao_caf3             # Possui versão CAF 3
+      - st_migrada_incra                  # Migrada do INCRA
+  
+  # Tabela: CAF (Cadastro da Agricultura Familiar)
+  "S_CAF":
+    primary_key: id_caf
+    columns:
+      - id_unidade_familiar               # Referência à unidade familiar
+      - id_usuario                        # Usuário responsável
+      - id_pessoa_juridica                # Pessoa jurídica associada
+      - uf                                # Unidade Federativa
+      - id_tipo_caf                       # Tipo do CAF
+      - nr_caf                            # Número do CAF
+      - dt_criacao                        # Data de criação
+      - id_entidade                       # Entidade emissora
+  
+  # Tabela: Pessoa Física
+  "S_PESSOA_FISICA":
+    primary_key: id_pessoa_fisica
+    columns:
+      - nm_pessoa_fisica                  # Nome da pessoa
+      - nm_social                         # Nome social
+      - dt_nascimento                     # Data de nascimento
+      - nr_cpf                            # CPF
+      - nm_mae                            # Nome da mãe
+      - nm_pai                            # Nome do pai
+      - ds_email                          # Email
+      - st_declarante_emancipado          # Status de emancipação
+      - dt_atualizacao                    # Data de atualização
+      - id_sexo                           # Sexo
+      - id_tipo_etnia                     # Etnia
+      - id_tipo_escolaridade              # Escolaridade
+      - id_tipo_estado_civil              # Estado civil
+      - cd_municipio                      # Código do município
+      - st_excluido                       # Status de exclusão
+  
+  # Tabela: Endereço
+  "S_ENDERECO":
+    primary_key: id_endereco
+    columns:
+      - sg_uf                             # UF
+      - nr_cep                            # CEP
+      - ds_logradouro                     # Logradouro
+      - ds_complemento                    # Complemento
+      - ds_referencia                     # Referência
+      - dt_atualizacao                    # Data de atualização
+      - cd_municipio                      # Código do município
+      - nr_logradouro                     # Número do logradouro
+  
+  # Tabela: Relacionamento Unidade Familiar - Pessoa
+  "S_UNIDADE_FAMILIAR_PESSOA":
+    primary_key: id_unidade_familiar_pessoa
+    columns:
+      - id_unidade_familiar               # ID da unidade familiar
+      - id_pessoa_fisica                  # ID da pessoa física
+      - id_tipo_membro_familiar           # Tipo de membro familiar
+      - dt_criacao                        # Data de criação
+      - dt_atualizacao                    # Data de atualização
+  
+  # Tabela: Enquadramento de Renda da Unidade Familiar
+  "S_UNIDADE_FAMILIAR_ENQUADRAMENTO_RENDA":
+    primary_key: id_unidade_familiar_enquadramento_renda
+    columns:
+      - id_unidade_familiar               # ID da unidade familiar
+      - id_tipo_enquadramento_renda       # Tipo de enquadramento (A, AC, V, etc)
+      - dt_criacao                        # Data de criação
+      - dt_atualizacao                    # Data de atualização
+  
+  # Tabela: Renda
+  "S_RENDA":
+    primary_key: id_renda
+    columns:
+      - id_unidade_familiar               # ID da unidade familiar
+      - id_tipo_renda                     # Tipo de renda
+      - id_categoria_renda                # Categoria da renda
+      - vl_renda                          # Valor da renda
+      - id_origem_renda                   # Origem da renda
+      - dt_criacao                        # Data de criação
+      - dt_atualizacao                    # Data de atualização
+  
+  # Tabela: Documento
+  "S_DOCUMENTO":
+    primary_key: id_documento
+    columns:
+      - id_unidade_familiar               # ID da unidade familiar
+      - id_tipo_documento                 # Tipo do documento
+      - nr_documento                      # Número do documento
+      - dt_emissao                        # Data de emissão
+      - dt_vencimento                     # Data de vencimento
+      - ds_orgao_expedidor                # Órgão expedidor
+      - dt_criacao                        # Data de criação
+      - dt_atualizacao                    # Data de atualização
+
+  # Tabela: Entidade Emissora
+  "S_ENTIDADE_EMISSORA":
+    primary_key: id_entidade_emissora
+    columns:
+      - nr_cnpj                           # CNPJ da entidade
+      - nm_razao_social                   # Razão social
+      - dt_criacao                        # Data de criação
+      - dt_inativacao                     # Data de inativação
+      - ds_motivo_inativacao              # Motivo da inativação
+
+# Configurações específicas para análise CAF:
+#
+# 1. As tabelas com prefixo "S_" são as principais tabelas de dados do sistema CAF
+#
+# 2. Campos importantes para auditoria:
+#    - dt_atualizacao: Para rastrear quando foi modificado
+#    - dt_criacao: Para novos registros
+#    - Status flags (st_*): Para mudanças de estado
+#    - IDs de relacionamento: Para detectar alterações em vínculos
+#
+# 3. A estrutura MongoDB deve refletir a estrutura de objetos aninhados conforme exemplo:
+#    - Objeto principal unidade_familiar com campos mapeados das tabelas SQL
+#    - Objetos aninhados: caf, enderecoPessoa, enquadramentoRendas, etc.
+#    - Conversão de IDs para objetos completos com descricoes
+#    - Timestamps em formato ISO 8601 ($date)
+#    - Mapeamento de campos:
+#      * id_unidade_familiar -> idUnidadeFamiliar
+#      * st_possui_mao_obra -> possuiMaoObraContratada
+#      * dt_validade -> dataValidade
+#      * ds_inativacao -> descricaoInativacao
+#      * dt_criacao -> dataCriacao
+#      * dt_atualizacao -> dataAtualizacao
+#      * dt_ativacao -> dataAtivacao
+#      * dt_primeira_ativacao -> dataPrimeiraAtivacao
+#      * dt_bloqueio -> dataBloqueio
+#      * dt_inativacao -> dataInativacao
+#      * st_migrada_caf_2 -> migradaCaf2
+#      * st_possui_versao_caf3 -> possuiVersaoCaf3
+#      * st_migrada_incra -> migradaIncra
+#      * Relacionamentos resolvidos em objetos aninhados
+#
+# 4. Principais pontos de monitoramento:
+#    - Mudanças de situação da unidade familiar
+#    - Alterações nos dados pessoais
+#    - Modificações na renda familiar
+#    - Atualizações de endereço
+#    - Mudanças no enquadramento de renda
+#    - Alterações em entidades emissoras
+#    - Modificações nos dados do CAF
+#
+# 5. Campos obrigatórios para a estrutura MongoDB:
+#    - _versao: versão do documento (sempre 1 para novos)
+#    - Objetos com id e descricao para lookup tables
+#    - Datas em formato apropriado (ISO string ou $date object)
+#    - Arrays para relacionamentos 1:N (ex: enquadramentoRendas)

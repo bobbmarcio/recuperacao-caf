@@ -1,0 +1,97 @@
+version: '3.8'
+
+services:
+  # MongoDB para auditoria de alterações
+  mongodb:
+    image: mongo:7.0
+    container_name: recuperacao-caf-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+      MONGO_INITDB_DATABASE: audit_db
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init:/docker-entrypoint-initdb.d
+    networks:
+      - recuperacao-caf-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Interface web para MongoDB
+  mongo-express:
+    image: mongo-express:1.0.0
+    container_name: recuperacao-caf-mongo-express
+    restart: unless-stopped
+    ports:
+      - "8080:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: admin123
+      ME_CONFIG_MONGODB_URL: mongodb://admin:admin123@mongodb:27017/
+      ME_CONFIG_BASICAUTH: false
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - recuperacao-caf-network
+
+  # PostgreSQL para processamento de dumps grandes
+  postgres-caf:
+    image: postgres:15
+    container_name: postgres-caf-dumps
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: caf_analysis
+      POSTGRES_USER: caf_user
+      POSTGRES_PASSWORD: caf_password123
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C"
+    ports:
+      - "5433:5432"  # Porta diferente para evitar conflito
+    volumes:
+      - postgres_caf_data:/var/lib/postgresql/data
+      - ./dumps:/dumps:ro  # Mount dos dumps como read-only
+      - ./postgres-scripts:/docker-entrypoint-initdb.d:ro
+    networks:
+      - recuperacao-caf-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U caf_user -d caf_analysis"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Interface web para PostgreSQL
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin-caf
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@caf.local
+      PGADMIN_DEFAULT_PASSWORD: admin123
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - "8082:80"  # Porta diferente do Mongo Express
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - recuperacao-caf-network
+    depends_on:
+      postgres-caf:
+        condition: service_healthy
+
+volumes:
+  mongodb_data:
+    driver: local
+  postgres_caf_data:
+    driver: local
+  pgadmin_data:
+    driver: local
+
+networks:
+  recuperacao-caf-network:
+    driver: bridge
