@@ -68,6 +68,31 @@ def run_unified_analysis(limit: int = None):
         print(f"❌ Erro ao executar análise de pessoa: {e}")
         return False
     
+    # Executar análise de endereços
+    print("\n" + "="*80)
+    print("📍 FASE 3: ANÁLISE ENDEREÇOS")
+    print("="*80)
+    
+    try:
+        if limit:
+            result3 = subprocess.run([
+                'python', 'run_caf_analysis_endereco.py', str(limit)
+            ], capture_output=False, text=True)
+        else:
+            result3 = subprocess.run([
+                'python', 'run_caf_analysis_endereco.py'
+            ], capture_output=False, text=True)
+        
+        if result3.returncode == 0:
+            print("✅ Análise de endereços concluída com sucesso")
+        else:
+            print("❌ Erro na análise de endereços")
+            return False
+            
+    except Exception as e:
+        print(f"❌ Erro ao executar análise de endereços: {e}")
+        return False
+    
     # Relatório final
     print("\n" + "="*80)
     print("📋 RELATÓRIO FINAL")
@@ -79,6 +104,9 @@ def run_unified_analysis(limit: int = None):
         
         print("\n👥 RESUMO UNIDADE FAMILIAR PESSOA:")
         subprocess.run(['python', 'verify_pessoa_updates.py'], capture_output=False)
+        
+        print("\n📍 RESUMO ENDEREÇOS:")
+        subprocess.run(['python', 'verify_endereco_updates.py'], capture_output=False)
         
     except Exception as e:
         print(f"⚠️  Erro ao gerar relatório: {e}")
@@ -107,12 +135,14 @@ EXEMPLOS:
 FUNÇÕES:
     - Executa análise incremental para unidade_familiar
     - Executa análise incremental para unidade_familiar_pessoa
+    - Executa análise incremental para endereços
     - Gera relatório unificado
-    - Aplica as mesmas regras de negócio para ambas as análises
+    - Aplica as mesmas regras de negócio para todas as análises
 
 COLEÇÕES MONGODB:
     - caf_unidade_familiar: Unidades familiares
     - caf_unidade_familiar_pessoa: Pessoas das unidades familiares
+    - caf_endereco: Endereços
 """)
 
 if __name__ == "__main__":

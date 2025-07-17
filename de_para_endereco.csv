@@ -1,0 +1,19 @@
+Collection: endereco,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5
+Campo (Mongo),Tipo de campo (Mongo),Tabela (Postgres),Campo (Postgres),Tipo de campo (Postgres),Funcão geradora (Postgres)
+_id,ObjectId,Não se aplica,Não se aplica,Não se aplica,Não se aplica
+idUnidadeFamiliar,string,S_UNIDADE_FAMILIAR,id_unidade_familiar,uuid,Não se aplica
+uf,string,S_ENDERECO,sg_uf,varchar,Não se aplica
+cep,string,S_ENDERECO,nr_cep,varchar,Não se aplica
+logradouro,string,S_ENDERECO,ds_logradouro,varchar,Não se aplica
+complemento,string,S_ENDERECO,ds_complemento,varchar,Não se aplica
+numero,string,S_ENDERECO,nr_logradouro,varchar,Não se aplica
+referencia,string,S_ENDERECO,ds_referencia,varchar,Não se aplica
+dataAtualizacao,date,S_ENDERECO,dt_atualizacao,timestamp,Não se aplica
+idEndereco,string,S_ENDERECO,id_endereco,uuid,Não se aplica
+,,,,,
+,,,,,
+codigoMunicipio,ObjectId,S_MUNICIPIO,Não se aplica,Não se aplica,Não se aplica
+codigoMunicipio,string,S_MUNICIPIO,cd_municipio,varchar,Não se aplica
+codigoUf,string,S_MUNICIPIO,cd_uf,varchar,Não se aplica
+siglaUf,string,S_MUNICIPIO,sg_uf,varchar,Não se aplica
+nome,string,S_MUNICIPIO,nm_municipio,varchar,Não se aplica
