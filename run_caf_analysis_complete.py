@@ -143,6 +143,31 @@ def run_unified_analysis(limit: int = None):
         print(f"❌ Erro ao executar análise de renda: {e}")
         return False
     
+    # Executar análise de funcionário UFPR
+    print("\n" + "="*80)
+    print("👤 FASE 6: ANÁLISE FUNCIONÁRIO UFPR")
+    print("="*80)
+    
+    try:
+        if limit:
+            result6 = subprocess.run([
+                'python', 'run_caf_analysis_funcionario_ufpr.py', str(limit)
+            ], capture_output=False, text=True)
+        else:
+            result6 = subprocess.run([
+                'python', 'run_caf_analysis_funcionario_ufpr.py'
+            ], capture_output=False, text=True)
+        
+        if result6.returncode == 0:
+            print("✅ Análise de funcionário UFPR concluída com sucesso")
+        else:
+            print("❌ Erro na análise de funcionário UFPR")
+            return False
+            
+    except Exception as e:
+        print(f"❌ Erro ao executar análise de funcionário UFPR: {e}")
+        return False
+    
     # Relatório final
     print("\n" + "="*80)
     print("📋 RELATÓRIO FINAL")
@@ -163,6 +188,9 @@ def run_unified_analysis(limit: int = None):
         
         print("\n💰 RESUMO RENDA:")
         subprocess.run(['python', 'verify_renda_updates.py'], capture_output=False)
+        
+        print("\n👤 RESUMO FUNCIONÁRIO UFPR:")
+        subprocess.run(['python', 'verify_funcionario_ufpr_updates.py'], capture_output=False)
         
     except Exception as e:
         print(f"⚠️  Erro ao gerar relatório: {e}")
@@ -194,6 +222,7 @@ FUNÇÕES:
     - Executa análise incremental para endereços
     - Executa análise incremental para área imóvel
     - Executa análise incremental para renda
+    - Executa análise incremental para funcionário UFPR
     - Gera relatório unificado
     - Aplica as mesmas regras de negócio para todas as análises
 
@@ -203,6 +232,7 @@ COLEÇÕES MONGODB:
     - caf_endereco: Endereços
     - caf_area_imovel: Áreas de imóveis
     - caf_renda: Rendas das unidades familiares
+    - caf_funcionario_ufpr: Funcionários UFPR
 """)
 
 if __name__ == "__main__":

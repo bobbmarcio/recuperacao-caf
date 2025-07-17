@@ -1,0 +1,20 @@
+Collection: funcionario_ufpr,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5
+Campo (Mongo),Tipo de campo (Mongo),Tabela (Postgres),Campo (Postgres),Tipo de campo (Postgres),Funcão geradora (Postgres)
+_id,ObjectId,Não se aplica,Não se aplica,Não se aplica,Não se aplica
+idUnidadeFamiliar,string,S_UNIDADE_FAMILIAR,id_unidade_familiar,uuid,Não se aplica
+dataAtualizacao,date,S_PESSOA_FISICA,dt_atualizacao,timestamp,uuid
+idMaoDeObra,string,S_FUNCIONARIO_UFPR,id_funcionario_ufpr,uuid,Não se aplica
+dataExclusao,date,Não se aplica,Não se aplica,Não se aplica,Não se aplica
+excluido,boolean,Não se aplica,Não se aplica,Não se aplica,Não se aplica
+,,,,,
+,,,,,
+pessoaFisica,ObjectId,S_PESSOA_FISICA,Não se aplica,Não se aplica,Não se aplica
+pessoaFisica.id,string,S_PESSOA_FISICA,id_pessoa_fisica,uuid,Não se aplica
+pessoaFisica.nome,string,S_PESSOA_FISICA,nm_pessoa_fisica,varchar,Não se aplica
+pessoaFisica.dataNascimento,string,S_PESSOA_FISICA,dt_nascimento,date,Não se aplica
+pessoaFisica.cpf,string,S_PESSOA_FISICA,nr_cpf,varchar,Não se aplica
+pessoaFisica.dataAtualizacao,string,S_PESSOA_FISICA,dt_atualizacao,timestamp,Não se aplica
+,,,,,
+pessoaFisica.sexo,ObjectId,S_SEXO,Não se aplica,Não se aplica,Não se aplica
+id,integer,S_SEXO,id_sexo,integer,Não se aplica
+nome,varchar,S_SEXO,nm_sexo,varchar,Não se aplica
