@@ -1,0 +1,35 @@
+Collection: renda,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5
+Campo (Mongo),Tipo de campo (Mongo),Tabela (Postgres),Campo (Postgres),Tipo de campo (Postgres),Funcão geradora (Postgres)
+_id,ObjectId,Não se aplica,Não se aplica,Não se aplica,Não se aplica
+idUnidadeFamiliar,string,S_UNIDADE_FAMILIAR,id_unidade_familiar,uuid,Não se aplica
+idRenda,string,S_RENDA,id_renda,uuid,Não se aplica
+rendaEstimada,integer,S_RENDA,vl_renda_estimada,numeric,Não se aplica
+rendaAuferida,integer,S_RENDA,vl_renda_auferida,numeric,Não se aplica
+dataCriacao,date,S_RENDA,dt_criacao,timestamp,Não se aplica
+dataAtualizacao,date,S_RENDA,dt_atualizacao,timestamp,Não se aplica
+producaoAgroecologica,boolean,S_RENDA,st_producao_agroecologica,boolean,Não se aplica
+,,,,,
+,,,,,
+produto,Object,S_PRODUTO,Não se aplica,Não se aplica,Não se aplica
+produto.id,string,S_PRODUTO,id_produto,uuid,Não se aplica
+produto.descricao,string,S_PRODUTO,ds_produto,varchar,Não se aplica
+,,,,,
+produto.categoria,Object,S_CATEGORIA_PRODUTO,Não se aplica,Não se aplica,Não se aplica
+produto.categoria.id,string,S_CATEGORIA_PRODUTO,id_categoria_produto,uuid,Não se aplica
+produto.categoria.descricao,string,S_CATEGORIA_PRODUTO,ds_categoria_produto,varchar,Não se aplica
+,,,,,
+,,,,,
+tipoRenda,Object,S_TIPO_RENDA,Não se aplica,Não se aplica,Não se aplica
+tipoRenda.id,string,S_TIPO_RENDA,id_tipo_renda,uuid,Não se aplica
+tipoRenda.descricao,string,S_TIPO_RENDA,ds_tipo_renda,varchar,Não se aplica
+,,,,,
+tipoRenda.origemRenda,Object,S_ORIGEM_RENDA,Não se aplica,Não se aplica,Não se aplica
+tipoRenda.origemRenda.id,integer,S_ORIGEM_RENDA,id_origem_renda,integer,Não se aplica
+tipoRenda.origemRenda.descricao,string,S_ORIGEM_RENDA,ds_origem_renda,varchar,Não se aplica
+,,,,,
+,,,,,
+membroFamiliar,Object,S_UNIDADE_FAMILIAR_PESSOA,Não se aplica,Não se aplica,Não se aplica
+membroFamiliar.id,string,S_UNIDADE_FAMILIAR_PESSOA,id_unidade_familiar_pessoa,uuid,Não se aplica
+membroFamiliar.pessoaFisica,Object,S_PESSOA_FISICA,Não se aplica,Não se aplica,Não se aplica
+membroFamiliar.pessoaFisica.id,string,S_PESSOA_FISICA,id_pessoa_fisica,uuid,Não se aplica
+membroFamiliar.pessoaFisica.nome,string,S_PESSOA_FISICA,nm_pessoa_fisica,varchar,Não se aplica

@@ -118,6 +118,31 @@ def run_unified_analysis(limit: int = None):
         print(f"❌ Erro ao executar análise de área imóvel: {e}")
         return False
     
+    # Executar análise de renda
+    print("\n" + "="*80)
+    print("💰 FASE 5: ANÁLISE RENDA")
+    print("="*80)
+    
+    try:
+        if limit:
+            result5 = subprocess.run([
+                'python', 'run_caf_analysis_renda.py', str(limit)
+            ], capture_output=False, text=True)
+        else:
+            result5 = subprocess.run([
+                'python', 'run_caf_analysis_renda.py'
+            ], capture_output=False, text=True)
+        
+        if result5.returncode == 0:
+            print("✅ Análise de renda concluída com sucesso")
+        else:
+            print("❌ Erro na análise de renda")
+            return False
+            
+    except Exception as e:
+        print(f"❌ Erro ao executar análise de renda: {e}")
+        return False
+    
     # Relatório final
     print("\n" + "="*80)
     print("📋 RELATÓRIO FINAL")
@@ -135,6 +160,9 @@ def run_unified_analysis(limit: int = None):
         
         print("\n🏠 RESUMO ÁREA IMÓVEL:")
         subprocess.run(['python', 'verify_area_imovel_updates.py'], capture_output=False)
+        
+        print("\n💰 RESUMO RENDA:")
+        subprocess.run(['python', 'verify_renda_updates.py'], capture_output=False)
         
     except Exception as e:
         print(f"⚠️  Erro ao gerar relatório: {e}")
@@ -165,6 +193,7 @@ FUNÇÕES:
     - Executa análise incremental para unidade_familiar_pessoa
     - Executa análise incremental para endereços
     - Executa análise incremental para área imóvel
+    - Executa análise incremental para renda
     - Gera relatório unificado
     - Aplica as mesmas regras de negócio para todas as análises
 
@@ -173,6 +202,7 @@ COLEÇÕES MONGODB:
     - caf_unidade_familiar_pessoa: Pessoas das unidades familiares
     - caf_endereco: Endereços
     - caf_area_imovel: Áreas de imóveis
+    - caf_renda: Rendas das unidades familiares
 """)
 
 if __name__ == "__main__":
