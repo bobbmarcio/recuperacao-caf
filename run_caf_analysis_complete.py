@@ -93,6 +93,31 @@ def run_unified_analysis(limit: int = None):
         print(f"❌ Erro ao executar análise de endereços: {e}")
         return False
     
+    # Executar análise de área imóvel
+    print("\n" + "="*80)
+    print("🏠 FASE 4: ANÁLISE ÁREA IMÓVEL")
+    print("="*80)
+    
+    try:
+        if limit:
+            result4 = subprocess.run([
+                'python', 'run_caf_analysis_area_imovel.py', str(limit)
+            ], capture_output=False, text=True)
+        else:
+            result4 = subprocess.run([
+                'python', 'run_caf_analysis_area_imovel.py'
+            ], capture_output=False, text=True)
+        
+        if result4.returncode == 0:
+            print("✅ Análise de área imóvel concluída com sucesso")
+        else:
+            print("❌ Erro na análise de área imóvel")
+            return False
+            
+    except Exception as e:
+        print(f"❌ Erro ao executar análise de área imóvel: {e}")
+        return False
+    
     # Relatório final
     print("\n" + "="*80)
     print("📋 RELATÓRIO FINAL")
@@ -107,6 +132,9 @@ def run_unified_analysis(limit: int = None):
         
         print("\n📍 RESUMO ENDEREÇOS:")
         subprocess.run(['python', 'verify_endereco_updates.py'], capture_output=False)
+        
+        print("\n🏠 RESUMO ÁREA IMÓVEL:")
+        subprocess.run(['python', 'verify_area_imovel_updates.py'], capture_output=False)
         
     except Exception as e:
         print(f"⚠️  Erro ao gerar relatório: {e}")
@@ -136,6 +164,7 @@ FUNÇÕES:
     - Executa análise incremental para unidade_familiar
     - Executa análise incremental para unidade_familiar_pessoa
     - Executa análise incremental para endereços
+    - Executa análise incremental para área imóvel
     - Gera relatório unificado
     - Aplica as mesmas regras de negócio para todas as análises
 
@@ -143,6 +172,7 @@ COLEÇÕES MONGODB:
     - caf_unidade_familiar: Unidades familiares
     - caf_unidade_familiar_pessoa: Pessoas das unidades familiares
     - caf_endereco: Endereços
+    - caf_area_imovel: Áreas de imóveis
 """)
 
 if __name__ == "__main__":
